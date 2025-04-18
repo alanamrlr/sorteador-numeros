@@ -2,7 +2,17 @@ function sortear(){
     let quantidade = parseInt(document.getElementById('quantidade').value);
     let de = parseInt(document.getElementById('de').value);
     let ate = parseInt(document.getElementById('ate').value);
+
+    if(de >= ate){
+        alert('O número mínimo é maior que o máximo. Tente novamente');
+        return;
+    }
     
+    if(quantidade > (de-ate+1)){ /*10 ate 14 tenho 5 números porém 14-10=4 o 1 é para incluir o número*/
+        alert('A quantidade de números pedidas para sortear é maior que o intervalo de números dados.');
+        return;
+    }
+
     let sorteados = [];
     let numero;
     for (let i = 0; i < quantidade; i++) {
